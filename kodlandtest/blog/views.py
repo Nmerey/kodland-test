@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
 from .models import Post
+from .forms import PostForm
 
 class PostList(generic.ListView):
     queryset 		= Post.objects.order_by('-created_on')[:10]
@@ -12,6 +13,6 @@ class PostDetail(generic.DetailView):
 
 class PostCreate(generic.CreateView):
 	model 			= Post
-	fields 			= ['title','content','image']
+	form_class 		= PostForm
 	template_name 	= 'post_form.html'
 	success_url 	= '/'

@@ -1,4 +1,27 @@
-<form method="post" enctype="multipart/form-data">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Save">
+{% extends 'base.html' %} 
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+{% block sidebar %} 
+{% include 'sidebar.html' %} 
+{% endblock sidebar %}
+
+<h1 class="text-primary">Add a post</h1>
+<form method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+	
+
+	<div class="form-group">
+		<div class="raw">
+			<div class="raw">
+				<div class="col-6">{{ form.title}}<div class="col-6"><input type="submit" value="Save"></div></div>
+			</div>
+			<div class="col-6">{{ form.content}}</div>
+			<div class="col-6">{{ form.image}}</div>
+		</div>
+	</div>
 </form>
+
+{% endblock content %}
