@@ -38,8 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
-    'crispy_forms'
+    'crispy_forms',
+    'ckeditor'
 ]
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'width': 635
+    }
+}
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

@@ -1,5 +1,6 @@
 from django import forms
 from .models import Post
+from ckeditor.fields import RichTextField
 
 class PostForm(forms.ModelForm):
 	class Meta:
@@ -7,7 +8,7 @@ class PostForm(forms.ModelForm):
 		fields	= ('title', 'content', 'image')
 
 		widgets 	= {
-			'title': forms.TextInput(attrs={'class':'form-control'}),
-			'content': forms.Textarea(attrs={'class':'form-control'}),
+			'title': forms.TextInput(attrs={'class':'form-control','placeholder':'Enter the title'}),
 			'image': forms.FileInput(attrs={'class':'form-control'}),
+			'content': RichTextField(blank=True,null=True),
 		}

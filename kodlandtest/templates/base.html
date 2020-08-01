@@ -44,12 +44,14 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item text-black">
-                    <a class="nav-link text-black font-weight-bold" href="post/add"><div class="btn btn-primary">+ Add New Post</div></a>
+                    <a class="nav-link text-black font-weight-bold" href="post/new"><div class="btn btn-primary">+ Add New Post</div></a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-{% block content %}{% endblock content %}
+<div class="container">
+    {% block content %}{% endblock content %}
+</div>
 </body>
 </html>
