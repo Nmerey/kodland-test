@@ -64,6 +64,8 @@ ROOT_URLCONF = 'kodlandtest.urls'
 
 TEMPLATE_DIR = os.path.join(BASE_DIR,"templates")
 
+MEDIA_DIR = os.path.join(BASE_DIR,"")
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -132,3 +134,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
