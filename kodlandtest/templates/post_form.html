@@ -5,26 +5,28 @@
 {% block content %}
 
 
-<h1 class="text-primary">Add a post</h1>
-<form method="post" enctype="multipart/form-data">
-	{% csrf_token %}
-	<div class="row mb-2">
-		<div class="col-7">
-			{{form.title}}
+<div class="container">
+	<h1 class="text-primary">Add a post</h1>
+	<form method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<div class="row mb-2">
+			<div class="col-7">
+				{{form.title}}
+			</div>
+			<div class="col">
+				<button type="submit" class="btn btn-alert">Save</button>
+			</div>
 		</div>
-		<div class="col">
-			<button type="submit" class="btn btn-alert">Save</button>
+		<div class="row">
+			<div class="col-7">
+				{{form.media}}
+				{{form.content}}
+			</div>
+			<div class="col-3">
+				{{form.image}}
+			</div>
 		</div>
-	</div>
-	<div class="row">
-		<div class="col-7">
-			{{form.media}}
-			{{form.content}}
-		</div>
-		<div class="col-3">
-			{{form.image}}
-		</div>
-	</div>
-</form>
+	</form>
+</div>
 
 {% endblock content %}
